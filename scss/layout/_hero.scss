@@ -1,0 +1,208 @@
+    /*--- HERO SECTION ---*/
+ 
+    .hero_section{
+        width: 100%;
+        background-image: url("../assets/img/bckgwp.png"), linear-gradient(90deg,#25D366 0%,#25D366 25%, #075E54 25%,#075E54 50% ,#128C7E 50%, #128C7E 75%, #25D366 75%, #25D366 100%);       
+        background-repeat:repeat-x;
+        background-position-x: right;
+        background-position-y:center;
+        display: flex;
+        flex-direction: column;
+        min-height: 60vh;
+        border-bottom: 1px solid $colorTerciario;
+        animation-duration: 3s;
+        transition: none;
+        animation-name: slideinTres;
+        overflow-x: hidden;
+        h2{
+            color: whitesmoke;
+            text-shadow: 3px 3px 0px rgba(0,0,0,1), 0px 1px 5px rgba(0,0,0,1);
+            font-size: 5.5rem;
+            margin-left: 10vw;
+            line-height: 95px;
+            margin-top: auto;
+            animation-duration: 3s;
+            animation-name: slidein;
+            span{
+                color: $colorTerciario;
+            }
+
+        }
+        &__instrucciones{
+            display: flex;
+            flex: row;
+            margin-top: auto;
+            animation-duration: 3s;
+            animation-name: slideinDos;
+            transition: all ease-in-out .4s;
+            div{
+                display: flex;
+                flex-direction: column;
+                width: 25vw;
+                align-items: center;
+                p{
+                    font-family: roboto;
+                    font-weight: bold;
+                    text-align: center;
+                    color: #34B7F1;
+                    text-shadow: 1px 1px 0px rgb(16, 16, 16), 0px 0px 4px rgb(0, 0, 0), 0px 0px 8px rgb(58, 58, 58);
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    span{
+                        font-family: roboto;
+                        color: $colorCuaternario;
+                    }
+                    
+                }
+                svg{
+                    width: 56px;
+                    height: 56px;
+                    margin-top: auto;
+
+                }
+                .bi-cart-plus{
+                    margin-bottom: 12px;
+                    color: $colorCuaternario;
+                }
+                .bi-cart-plus-fill{
+                    margin-bottom: 12px;                    
+                    color: #00b180;
+                }
+                .bi-check2-all-grey{
+                    color: rgb(233, 233, 233);
+                }
+                .bi-check2-all-blue{
+                    color: #34B7F1;
+
+                }
+            }
+        }
+    }
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }  
+    to {
+        margin-left: 10%;
+        width: 90%;
+        text-shadow:3px 3px 0px rgba(0,0,0,1), 0px 1px 5px rgba(0,0,0,1), 0px 2px 8px rgb(0, 0, 0);
+    }
+}
+@keyframes slideinDos {
+    from {
+        margin-left: 1800%;
+        width: 300%;
+        background-position-x: 300px;
+    }  
+    to {
+        margin-left: 0%;
+        width: 100%;
+        text-shadow:3px 3px 0px rgba(0,0,0,1), 0px 1px 5px rgba(0,0,0,1), 0px 2px 8px rgb(0, 0, 0);
+        background-position-x: center;
+    }
+}
+@keyframes slideinTres {
+    from {
+        margin-left: 0%;
+        width: 300%;
+        background-position-x: left;
+
+    }  
+    to {
+        margin-left: 0;
+        width: 100%;
+        background-position-x: right;
+        
+    }
+}
+@media (max-width: 550px){
+    div{
+        .hero_section{
+            background-position-y: center;
+            background-position-x: center;
+            background-repeat: no-repeat;
+            h2{
+                font-size: 2.1rem;
+                margin-left: 0px;
+                line-height: 40px;
+
+            }
+            &__instrucciones{
+                div{
+                    p{
+                        font-size: 0.8rem;
+
+                    }
+                }
+            }
+        }
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 100%;
+            }  
+            to {
+                margin-left: 0%;
+                width: 90%;
+                text-shadow:3px 3px 0px rgba(0,0,0,1), 0px 1px 5px rgba(0,0,0,1), 0px 2px 8px rgb(0, 0, 0);                
+            }
+        }
+        @keyframes slideinDos {
+            from {
+                margin-left: 1800%;
+                width: 300%;
+                background-position-x: 300px;
+                margin-bottom: 1000px;
+
+                
+            }  
+            to {
+                margin-left: 0%;
+                width: 100%;
+                text-shadow:3px 3px 0px rgba(0,0,0,1), 0px 1px 5px rgba(0,0,0,1), 0px 2px 8px rgb(0, 0, 0);
+                background-position-x: center;
+            }
+        }
+        @keyframes slideinTres {
+            from {
+                margin-left: 0%;
+                width: 300%;
+                background-position-x: left;
+        
+            }  
+            to {
+                margin-left: 0;
+                width: 100%;
+                background-position-x: center;
+                
+            }
+        }    
+    }
+}
+
+@media (max-width: 1000px){
+    div{
+        .hero_section{
+            h2{
+                text-align: center;
+                margin-left: 0px;
+
+            }
+        }
+    }
+    @keyframes slidein {
+        from {
+            margin-left: 100%;
+            width: 300%;       
+        }  
+        to {
+            margin-left: 5%;
+            width: 90%;
+            text-shadow:3px 3px 0px rgba(0,0,0,1), 0px 1px 5px rgba(0,0,0,1), 0px 2px 8px rgb(0, 0, 0);
+        }
+    }
+}
+
+

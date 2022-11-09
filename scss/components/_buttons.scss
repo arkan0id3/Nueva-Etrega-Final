@@ -1,0 +1,18 @@
+button{
+    padding:8px 12px;
+    margin:8px 8px 8px;
+    font-family: $tipografiaTarjeta;
+    font-weight: 600;
+    border:2px solid $colorSecundario;
+    background: rgba(77, 49, 86, 0.724);
+    color: $colorTerciario;
+    cursor:pointer;
+    transition:all .3s;
+    align-self:auto;
+    margin-top: auto;
+    border-radius: 20px;
+    &:hover{
+        background: $colorPrimario;
+        color:$colorCuaternario;
+    }
+}

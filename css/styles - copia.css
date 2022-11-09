@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oleo Script Swash Caps";
+}
+ul,
+ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #e798ce;
+}
+
+
+
+/*---- HEADER ----*/
+
+header {    
+    background-color: #4d3156;
+    border-bottom: 4px solid rgb(236,207,10);    
+    padding: 15px;    
+    display: flex;    
+    justify-content: space-between;
+                      
+}
+h1{        
+    background-image: url('../assets/img/backgroundresized.jpg');
+    -webkit-background-clip: text;    
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    text-shadow: -3px -4px #e798ce, -1px -2px #4a325a;
+    letter-spacing: 1px;
+}
+h1 span {
+    text-shadow: -3px -4px #98e7b1, -1px -2px #4a325a;
+    font-size: 3rem;
+}
+.header__divImg{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px; 
+}
+.header__divImg img{
+    width: 16px;
+    height: 16px;
+    
+}
+nav{
+    width: 50%;
+    align-self: flex-end;    
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem;
+}
+nav ul li {
+    margin: 0.5rem;
+}
+
+
+@media (max-width: 576px){
+    header{
+        flex-wrap: wrap;
+        justify-content:center;
+        padding: 0px;
+       
+    }
+    nav ul li {
+        margin: 1rem;
+    }
+    .header__divImg {
+        
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-self:flex-end;
+
+    }
+
+
+}
+
+/*---- BODY ---- */
+
+
+footer{
+    text-align: center;
+    background-color: #4a325a;
+    
+}
+
+/*----------------------- INDEX ----------------------*/
+
+
+
+/*--- MAIN ---*/
+
+.mainIndex{
+    border-top: 2px solid #06cacb;
+}
+
+/*--- SECTION ---*/
+
+.section{
+    display: flex;    
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.7vh;            
+}
+
+.titulo{
+    font-size: 3rem;        
+    font-family: 'Passion One', cursive;
+    border-top: 4px solid #06cacb ;    
+    color: rgb(169, 63, 63);
+    text-shadow: -3px 0 rgb(203,7,6);
+    border-radius: 10px;        
+    writing-mode:vertical-lr;
+    text-orientation:upright;
+    text-align: center;
+    background-color: rgb(236,207,10);
+    border-radius: 10px;
+    margin-left: 40px;                                   
+}
+
+/*--- SLIDER ---*/
+
+.section__slider{
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    overflow-y: hidden;        
+}
+.section__slider::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.section__slider::-webkit-scrollbar-button:increment,.section__slider::-webkit-scrollbar-button {
+    display: inline;
+}
+.section__slider::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+.section__slider::-webkit-scrollbar-thumb {
+    background-color: #98e7b1;
+    border-radius: 20px;
+    border: 2px solid rgb(203,7,6);
+}
+.section__slider::-webkit-scrollbar-track {
+    border-radius: 10px;  
+} 
+
+
+
+/*---- Tarjeta ----*/
+    
+.section__tarjeta{    
+    min-width: 450px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+.section__tarjeta a {
+    display: inline-block;
+    height: 100%;    
+}
+.section__tarjeta__contenedor{
+    height: 100%;
+}
+.section__tarjeta:hover figure {    
+    -ms-transform: perspective(600px) rotateY(180deg);
+    -o-transform: perspective(600px) rotateY(180deg);
+    -webkit-transform: perspective(600px) rotateY(180deg);
+    transform: perspective(600px) rotateY(180deg);
+    -webkit-box-shadow: 0px 0px 20px 1px #98e7b1;
+    -moz-box-shadow: 0px 0px 20px 1px #98e7b1;
+    box-shadow: 0px 0px 20px 1px #98e7b1;
+    
+    
+}
+.section__tarjeta__contenedor:hover figure img{
+    filter: blur(2px);    
+}
+figure{
+    margin: 0px;
+    position: relative;
+    transition: all ease .5s;
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateY(0deg);
+    border: 30px solid rgba(77,49,86,0.8);        
+}
+figure .frontal,
+figure .trasera {
+    width: 100%;
+    height: 100%;
+    border-radius: 1px;
+    transition: all ease .5s;
+}
+figure .frontal{
+    display: block;
+}
+figure .trasera {
+    position: absolute;
+    top: 0px;
+    padding: 20px;
+    color: #98e7b1;
+    transform: perspective(500px) rotateY(180deg);
+    backface-visibility: hidden;
+    overflow: auto;
+    font-family: Roboto ;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;           
+    background: linear-gradient(180deg, rgba(203,7,6,0.4296285164456407) 7%, rgba(236,207,10,0.4688442027201506) 63%);    
+    
+}
+figure .trasera p,h3 {
+    font-family: roboto;
+    text-shadow: 1px 0px 6px black;               
+}
+.section__tarjeta img{
+    width: 100%;
+    height: 100%;
+}
+
+/*----------------------- PAG: KITNATURA ------------------*/
+
+.mainKitNatura{
+    display: flex;
+    justify-content: center;
+
+}
+.kitNatura {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr ;      
+    gap: 2px;
+    width: 63vw;
+    height: 50vh;        
+}
+
+.kitNatura article div{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.kitNatura article div img{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.kitNatura article div img:hover {
+    transition: all ease .5s;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);       
+}
+
+
+/*-------------------- PAG: NATURA & TIPS -----------------*/
+
+/*---- Main ----*/
+.mainNaturaTips{
+    display: flex;
+
+    
+    justify-content: center;
+}
+
+.mainNaturaTips .divPrincipal {
+    width: 80vw;
+    height: 83.4vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+/*---- Section ----*/
+
+.mainNaturaTips section{
+    padding: 20px;
+    background-color: #98e7b18c;
+    margin: 20px;
+    margin-right: 0px; 
+    text-align: left;
+      
+}
+.videonatura {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*---- Section2 ----*/
+
+.mainNaturaTips .section2{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    background-color: rgba(77,49,86,0.8);
+    align-items: center;
+    padding: 1px;
+    
+    
+    
+}
+.video{
+    display:flex;
+    flex-direction: column;
+}
+.mainNaturaTips iframe:hover{
+    box-shadow: 0px 0px 4px 1px #98e7b1;
+    overflow: hidden;
+}
+
+/*scrollbar*/
+.mainNaturaTips .section2::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.mainNaturaTips .section2::-webkit-scrollbar-button:increment,.section__slider::-webkit-scrollbar-button {
+    display: inline;
+}
+.mainNaturaTips .section2::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+.mainNaturaTips .section2::-webkit-scrollbar-thumb {
+    background-color: #98e7b1;
+    border-radius: 20px;
+    border: 2px solid rgb(203,7,6);
+}
+.mainNaturaTips .section2::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+@media (max-width: 576px){
+    .mainNaturaTips {
+        overflow-y: scroll;
+        
+    }
+    .mainNaturaTips .divPrincipal{
+        grid-template-columns: 1fr;
+    }
+    .mainNaturaTips .section2 {
+        overflow-y: visible;
+    }
+    
+
+}
+
+/*----------------------- PAG: CONTACTO ----------------------*/
+
+
+/*---- Main ----*/
+.mainContacto {
+    display: flex;
+    flex-wrap: nowrap;    
+    justify-content: center;        
+}
+
+.mainContacto .divPrincipal {
+    width: 80vw;
+    height: 83.4vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+}
+
+/*---- Section ----*/
+
+.mainContacto section{
+    padding: 20px;
+    background-color: #98e7b18c;
+    margin: 20px;         
+}
+
+.mainContacto section div{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    justify-content: center;
+}
+.section2 div{
+    display: flex;
+    align-content: flex-end;
+}
+.section2 div img{
+    width: 20%;
+    height: 20%;
+}
+.mainContacto .section2{
+    background-color: rgba(77,49,86,0.8);
+    
+    text-align: end;
+    
+}
+@media (max-width: 576px){
+    .mainContacto {
+        overflow-y: scroll;
+        
+    }
+    .mainContacto .divPrincipal{
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+

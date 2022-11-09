@@ -1,0 +1,32 @@
+footer{
+    text-align: center;    
+    justify-self: end;
+    --g-red: #d04b36;
+        --g-orange: #e36511;
+        --g-yellow: #ffba00;
+        --g-green: #00b180;
+        --g-blue: #147aab;
+        --g-indigo: #675997;
+        /*background: linear-gradient(90deg, rgba(236,207,10,1) 5%, rgba(152,231,177,1) 10%, rgba(231,152,206,1) 23%);*/
+        background: linear-gradient(
+            var(--g-red) 0%,
+            var(--g-red) 16.6666%,
+            var(--g-orange) 16.6666%,
+            var(--g-orange) 33.333%,
+            var(--g-yellow) 33.333%,
+            var(--g-yellow) 50%,
+            var(--g-green) 50%,
+            var(--g-green) 66.6666%,
+            var(--g-blue) 66.6666%,
+            var(--g-blue) 83.3333%,
+            var(--g-indigo) 83.3333%,
+            var(--g-indigo) 100%
+        );
+    p{
+        font-family: $tipografiaTarjeta;
+        font-size: 0.8rem;
+        a{
+            text-shadow: $colorCuaternario;
+        }
+    }
+}

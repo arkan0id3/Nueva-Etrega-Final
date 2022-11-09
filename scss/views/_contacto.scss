@@ -1,0 +1,70 @@
+/*----------------------- PAG: CONTACTO ----------------------*/
+
+
+/*---- Main ----*/
+.mainContacto {
+    display: flex;
+    flex-wrap: nowrap;    
+    justify-content: center;
+    
+    
+    
+    
+    .divPrincipal {
+        width: 80vw;
+        height: 84.2vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        /*---- Section ----*/
+        section{
+            padding: 20px;
+            margin: 20px;
+            border-radius:8px;
+            box-shadow:0 0 40px -10px #000;
+            display: flex;
+            align-items: center; 
+        }
+        .section1{
+            background-color: $colorMenu1;
+            justify-content: center;
+            align-items: center;
+        }           
+        .section2 {
+            background-color: $colorMenu2;
+            flex-direction: column;
+            justify-content: space-around;                                 
+            div{                  
+                display: flex;                     
+                img{
+                    width: 115px;
+                    height: 115px;
+                    box-shadow:0 0 40px -10px #000;
+                    border-radius:12px;
+                }
+                p{
+                    align-self: center;
+                    color: $colorLinks ;
+                    font-family: $tipografiaTarjeta; 
+                    
+                }
+            }
+        }    
+    }        
+}
+
+
+@media (max-width: 862px){
+    .mainContacto {
+        overflow-y:scroll;
+        overflow-x: hidden;
+        .divPrincipal{
+            grid-template-columns: 1fr;
+            width: 100vw;
+            
+            .section1, .section2{
+                margin: 4px;
+            }
+        }        
+    }
+}

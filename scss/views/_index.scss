@@ -1,0 +1,200 @@
+/*----------------------- INDEX ----------------------*/
+
+/*--- MAIN ---*/
+.mainIndex{
+    border-top: 2px solid #06cacb;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+
+    /*--- SECTION ---*/
+
+    .section{
+        display: flex;    
+        flex-direction: row;
+        align-self: center;
+        width: 80vw;
+        box-shadow:0 0 40px -10px #000;
+
+        
+        .titulo{
+            font-size: 3rem;        
+            font-family: $tipografiaCarteles;
+            border-top: 4px solid #06cacb ;    
+            color: rgb(169, 63, 63);
+            text-shadow: -3px 0 $colorSecundario;
+            border-radius: 10px;        
+            writing-mode:vertical-lr;
+            text-orientation:upright;
+            text-align: center;
+            background-color: rgb(236,207,10);
+            border-radius: 10px;                         
+        }
+        /*--- SLIDER ---*/
+
+        .section__slider{
+            display: flex;
+            overflow-x:auto;
+            gap: 5px;
+            overflow-y:hidden; 
+            background-color: #00000052 ;
+            
+            &::-webkit-scrollbar {
+                -webkit-appearance: none;                
+            }
+            &::-webkit-scrollbar-button:increment,.section__slider::-webkit-scrollbar-button {
+                display: inline;
+            }
+            &::-webkit-scrollbar:horizontal {
+                height: 12px;
+            }
+            &::-webkit-scrollbar-thumb {
+                --g-red: #d04b36;
+                --g-orange: #e36511;
+                --g-yellow: #ffba00;
+                --g-green: #00b180;
+                --g-blue: #147aab;
+                --g-indigo: #675997;
+                background: linear-gradient(
+                var(--g-red) 0%,
+                var(--g-red) 16.6666%,
+                var(--g-orange) 16.6666%,
+                var(--g-orange) 33.333%,
+                var(--g-yellow) 33.333%,
+                var(--g-yellow) 50%,
+                var(--g-green) 50%,
+                var(--g-green) 66.6666%,
+                var(--g-blue) 66.6666%,
+                var(--g-blue) 83.3333%,
+                var(--g-indigo) 83.3333%,
+                var(--g-indigo) 100%
+            );
+                border-radius: 20px;
+                border: 2px solid $colorSecundario;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;  
+            }
+            .section__tarjeta  {
+                min-width: 420px;
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;   
+                &:hover{ 
+                    figure{                           
+                        -webkit-transform: perspective(600px) rotateY(180deg);
+                        transform: perspective(600px) rotateY(180deg);
+                        -webkit-box-shadow: 0px 0px 20px 1px $colorTerciario;                        
+                        box-shadow: 0px 0px 20px 1px $colorTerciario;
+                    }
+                }
+                &__contenedor{
+                    height: 100%;
+                    a{
+                        display: inline-block;
+                        height: 100%;
+                        #btnControl {
+                            display: none;
+                        }
+                        figure{
+                            margin: 0px;
+                            position:static;
+                            transition: all ease .5s;
+                            transform-style: preserve-3d;
+                            transform: perspective(700px) rotateY(0deg);
+                            border: 23px solid $colorPrimario;                             
+                            .frontal{
+                                display: block;
+                                width: 100%;
+                                height: 100%;                                
+                            }
+                            .trasera {
+                                position: absolute;
+                                top: 0px;
+                                padding: 20px;
+                                color: $colorTerciario;
+                                transform: perspective(500px) rotateY(180deg);
+                                backface-visibility: hidden;
+                                overflow: auto;
+                                
+                                display:flex;
+                                flex-direction: column;         
+                                background: linear-gradient(180deg, rgba(203,7,6,0.4296285164456407) 7%, rgba(236,207,10,0.4688442027201506) 63%);
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 1px;
+                                transition: all ease .5s;
+                                div{
+                                    margin-top: auto;
+                                    p, h4{
+                                        font-family: $tipografiaTarjeta;
+                                        text-shadow: 1px 0px 6px black;                
+                                    }
+                                }
+                                button{
+                                    
+                                }
+                            }                                    
+                        }                         
+                    }
+                    &:hover  {
+                        figure{
+                            img{
+                                filter: blur(2px);
+                            }
+                        }
+                    }
+
+                }                                               
+            }                                   
+        }        
+    }
+    .sectionDos{
+        box-shadow:0 0 40px -30px #000;
+    }           
+}
+.sectionUno{
+    margin-top: 20px;
+}
+
+
+@media (max-width: 1000px){
+    .mainIndex{        
+        .section{
+            width:100%;
+            align-self: flex-start;
+            margin-top: 10px;
+            .titulo{
+                font-size: 1.5rem;
+            }
+            .section__slider{
+                gap: 2px;
+                .section__tarjeta{
+                    min-width: 350px;              
+                    &__contenedor{
+                        a{
+                            #btnControl:checked + label > img{ 
+                                figure{                           
+                                    -webkit-transform: perspective(600px) rotateY(180deg);
+                                    transform: perspective(600px) rotateY(180deg);
+                                    -webkit-box-shadow: 0px 0px 20px 1px $colorTerciario;                        
+                                    box-shadow: 0px 0px 20px 1px $colorTerciario;
+
+                                }
+                            }
+                            figure{
+                                border: 10px solid $colorPrimario; 
+                            }
+                            
+                        }    
+                    }
+                }
+            }    
+        }
+    }
+}
+
+
+
+
